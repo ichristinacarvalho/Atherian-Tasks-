@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Atherian Tasks - Um gerenciador de tarefas gamificado onde sua produtividade dita seus atributos.">
+
+    <link rel="shortcut icon" href="./images/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <!-- bootstrap CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <title>Atherian Tasks</title>
+</head>
+
+<body>
+
+    <header class="text-center">
+        <h1>Atherian Tasks</h1>
+
+        <p>Suba de nível na vida real, uma tarefa por vez.</p>
+    </header>
+
+    <main class="container my-5">
+
+        <section id="forja-missoes" class="mb-5">
+            <form id="forja" class="card p-4 shadow-sm border-0">
+
+                <h3 class="mb-4">Balcão da Guilda</h3>
+
+                <div class="mb-3">
+                    <label for="missao" class="form-label fw-bold">Missão:</label>
+                    <input type="text" class="form-control" id="missao" name="missao" required
+                        placeholder="ex: Derrotar o Boss do semestre">
+                </div>
+
+                <div class="mb-3">
+                    <label for="dificuldade" class="form-label fw-bold">Dificuldade:</label>
+                    <select class="form-select" name="dificuldade" id="dificuldade" required>
+                        <option value="" selected disabled>Selecione a dificuldade</option>
+                        <option value="comum">Comum</option>
+                        <option value="raro">Raro</option>
+                        <option value="lendario">Lendário</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="categoria" class="form-label fw-bold">Categoria:</label>
+                    <select class="form-select" name="categoria" id="categoria" required>
+                        <option value="" selected disabled>Selecione a categoria</option>
+                        <option value="guerreiro">Guerreiro (tarefas físicas/esportes)</option>
+                        <option value="mago">Mago (estudos/foco)</option>
+                        <option value="ladino">Ladino (tarefas domésticas/furtivas)</option>
+                        <option value="clerigo">Clérigo (autocuidado/saúde)</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn w-100 fw-bold py-2">Criar missão</button>
+            </form>
+        </section>
+
+        <section id="mural-missoes">
+
+            <h3 class="mb-4 border-bottom pb-2">Mural de missões</h3>
+            <div class="row" id="area-cards"></div>
+        </section>
+    </main>
+
+    <footer class="text-center">
+        <p>Atherian Tasks</p>
+
+        <p>A jornada é longa, mas a recompensa vale a pena. Continue jogando.</p>
+
+        <p>© 2026 Atherian Tasks</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <!--bootstrap JS-->
+    <script type="module" src="./scripts/script.js"></script>
+</body>
+
+</html>
