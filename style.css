@@ -1,0 +1,362 @@
+/* GERAIS*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', Arial, Helvetica, sans-serif;
+}
+
+/* PALETA DE CORES ATHERA CODE */
+:root {
+    /* Cores de Fundo (Escuros) */
+    --fundo-principal: #0A1317;
+    /* Quase preto */
+    --fundo-secundario: #14353E;
+    /* Teal escuro usado nos gradientes */
+    --fundo-cards: #0D1F24;
+
+    /* Cores de Fundo (Claros - para contraste) */
+    --fundo-claro: #EEF3F2;
+    --fundo-branco: #FFFFFF;
+
+    /* Cores de Destaque */
+    --destaque-ciano: #41EAD4;
+    --destaque-ciano-claro: #80FFDB;
+    --destaque-roxo: #A06CD5;
+    --destaque-roxo-escuro: #6E44FF;
+
+    /* Textos Clientes (Para fundos escuros) */
+    --texto-claro: #E2E8F0;
+    --texto-mutado-claro: #CBD5E1;
+    --texto-secundario-claro: #94A3B8;
+
+    /* Textos Escuros (Para fundos claros) */
+    --texto-escuro: #334155;
+    --texto-mutado-escuro: #64748B;
+
+    /* Bordas e Detalhes */
+    --borda-escura: #1E4E5B;
+    --borda-clara: #D5DEDC;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--fundo-principal);
+    background-image:
+        radial-gradient(circle at 20% 15%, var(--fundo-secundario) 0%, var(--fundo-principal) 70%);
+    background-attachment: fixed;
+    color: var(--texto-claro);
+    min-height: 100vh;
+}
+
+/* CONTAINER DA FORJA */
+#forja,
+.card-forja {
+    background-color: var(--fundo-cards);
+    border: 1px solid var(--borda-escura);
+    border-radius: 12px;
+}
+
+/* RÓTULOS (LABELS) */
+label {
+    color: var(--texto-secundario-claro);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* CAMPOS DE TEXTO E SELECTS */
+.form-control,
+.form-select {
+    background-color: var(--fundo-principal);
+    border: 1px solid var(--borda-escura);
+    color: var(--texto-claro);
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+}
+
+/* COR DO PLACEHOLDER */
+.form-control::placeholder {
+    color: var(--texto-secundario-claro);
+    opacity: 0.7;
+}
+
+/* ESTADO ATIVO AO CLICAR NO CAMPO (FOCO NEON) */
+.form-control:focus,
+.form-select:focus {
+    background-color: var(--fundo-principal);
+    color: var(--texto-claro);
+    border-color: var(--destaque-ciano);
+    box-shadow: 0 0 10px rgba(65, 234, 212, 0.25);
+    outline: none;
+}
+
+/* CORREÇÃO E DESTAQUE DOS TÍTULOS */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--texto-claro);
+    font-weight: 700;
+}
+
+/* DESTAQUE ESTILO ATHERA CODE NOS TÍTULOS DE SEÇÃO */
+h3 {
+    color: var(--destaque-ciano);
+    letter-spacing: 0.5px;
+    text-shadow: 0 0 15px rgba(65, 234, 212, 0.2);
+}
+
+/* BOTÃO PRINCIPAL DA FORJA (FORJAR / CRIAR MISSÃO) */
+#forja button[type="submit"],
+#forja .btn-primary {
+    background-color: var(--destaque-ciano);
+    color: var(--fundo-principal);
+    border: none;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    border-radius: 8px;
+    padding: 10px 20px;
+    transition: all 0.2s ease-in-out;
+}
+
+/* EFEITO AO PASSAR O RATO (HOVER COM BRILHO E ELEVAÇÃO) */
+#forja button[type="submit"]:hover,
+#forja .btn-primary:hover {
+    background-color: var(--destaque-ciano-claro);
+    color: var(--fundo-principal);
+    box-shadow: 0 0 18px rgba(65, 234, 212, 0.45);
+    transform: translateY(-2px);
+}
+
+/* EFEITO AO CLICAR */
+#forja button[type="submit"]:active,
+#forja .btn-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 0 8px rgba(65, 234, 212, 0.3);
+}
+
+/*ANIMAÇÕES DAS PARTICULAS*/
+.particulas {
+    position: absolute;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+}
+
+.particula {
+    position: absolute;
+
+    width: 8px;
+    height: 8px;
+
+    background: #41EAD4;
+    box-shadow: 0 0 8px rgba(65, 234, 212, 0.5);
+
+    border-radius: 50%;
+
+    top: 30%;
+    left: 20%;
+
+    animation: flutuar 5s infinite;
+    animation-direction: alternate;
+}
+
+.particula:nth-child(2) {
+    background: #A06CD5;
+    box-shadow: 0 0 10px rgba(160, 108, 213, 0.6);
+
+    width: 5px;
+    height: 5px;
+
+    top: 60%;
+    left: 30%;
+
+    animation-duration: 8s;
+    animation-name: flutuar-esquerda;
+}
+
+.particula:nth-child(3) {
+    background: #FFFFFF;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
+
+    width: 10px;
+    height: 10px;
+
+    top: 40%;
+    left: 70%;
+
+    animation-duration: 12s;
+    animation-name: flutuar-baixo;
+}
+
+.particula:nth-child(4) {
+    background: #80FFDB;
+    box-shadow: 0 0 8px rgba(65, 234, 212, 0.5);
+
+    width: 4px;
+    height: 4px;
+
+    top: 80%;
+    left: 50%;
+
+    animation-duration: 6s;
+    animation-name: flutuar-cima-esquerda;
+}
+
+.particula:nth-child(5) {
+    background: #6E44FF;
+    box-shadow: 0 0 12px rgba(110, 68, 255, 0.6);
+
+    width: 7px;
+    height: 7px;
+
+    top: 20%;
+    left: 10%;
+
+    animation-duration: 17s;
+    animation-name: flutuar;
+}
+
+.particula:nth-child(6) {
+    background: #41EAD4;
+    box-shadow: 0 0 8px rgba(65, 234, 212, 0.5);
+
+    width: 3px;
+    height: 3px;
+
+    top: 50%;
+    left: 60%;
+
+    animation-duration: 5s;
+    animation-name: flutuar-esquerda;
+}
+
+.particula:nth-child(7) {
+    background: #A06CD5;
+    box-shadow: 0 0 12px rgba(160, 108, 213, 0.6);
+
+    width: 9px;
+    height: 9px;
+
+    top: 80%;
+    left: 40%;
+
+    animation-duration: 8s;
+    animation-name: flutuar-baixo;
+}
+
+.particula:nth-child(8) {
+    background: #E2E8F0;
+    box-shadow: 0 0 8px rgba(65, 234, 212, 0.5);
+
+    width: 3px;
+    height: 3px;
+
+    top: 90%;
+    left: 70%;
+
+    animation-duration: 6s;
+    animation-name: flutuar-cima-esquerda;
+}
+
+.particula:nth-child(9) {
+    background: #80FFDB;
+    box-shadow: 0 0 8px rgba(65, 234, 212, 0.5);
+
+    width: 4px;
+    height: 4px;
+
+    top: 10%;
+    left: 80%;
+
+    animation-duration: 6s;
+    animation-name: flutuar-cima-esquerda;
+}
+
+.particula:nth-child(10) {
+    background: #6E44FF;
+    box-shadow: 0 0 8px rgba(65, 234, 212, 0.5);
+
+    width: 7px;
+    height: 7px;
+
+    top: 30%;
+    left: 30%;
+
+    animation-duration: 17s;
+    animation-name: flutuar;
+}
+
+.particula:nth-child(11) {
+    background: #41EAD4;
+    box-shadow: 0 0 8px rgba(65, 234, 212, 0.5);
+
+    width: 6px;
+    height: 6px;
+
+    top: 15%;
+    left: 55%;
+
+    animation-duration: 9s;
+    animation-name: flutuar-esquerda;
+}
+
+.particula:nth-child(12) {
+    background: #A06CD5;
+    box-shadow: 0 0 10px rgba(160, 108, 213, 0.6);
+
+    width: 5px;
+    height: 5px;
+
+    top: 65%;
+    left: 85%;
+
+    animation-duration: 11s;
+    animation-name: flutuar;
+}
+
+/*movimentação*/
+@keyframes flutuar {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(100px, -50px);
+    }
+}
+
+@keyframes flutuar-esquerda {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(-100px, -50px);
+    }
+}
+
+@keyframes flutuar-baixo {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(120px, 80px);
+    }
+}
+
+@keyframes flutuar-cima-esquerda {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(-70px, -80px);
+    }
+}
