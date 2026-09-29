@@ -8,12 +8,12 @@
     <meta name="description"
         content="Atherian Tasks - Um gerenciador de tarefas gamificado onde sua produtividade dita seus atributos.">
 
-    <link rel="shortcut icon" href="./images/icon.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="./images/Icon AC.png" type="image/x-icon">
     <!-- bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 
-    <!--Fontes importadas-->
+    <!-- Fontes importadas -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap"
@@ -24,9 +24,31 @@
 
 <body>
 
-    <header class="text-center">
+    <!-- BARRA SUPERIOR DE AUTENTICAÇÃO -->
+    <nav class="py-2 px-3 border-bottom">
+        <div class="container d-flex justify-content-between align-items-center">
 
-        <div class="particulas">
+            <a href="#home">
+                <img class="logo" alt="Athera Code" src="./images/Icon AC.png">
+            </a>
+
+            <!-- Status do usuário e botões no canto direito -->
+            <div class="d-flex align-items-center gap-3">
+                <div id="info-usuario" class="d-flex align-items-center gap-2">
+                    <span class="text-secondary small">Sessão não iniciada</span>
+                </div>
+                <div>
+                    <button id="btn-login" class="btn btn-sm btn-outline-info">Entrar com Google</button>
+                    <button id="btn-logout" class="btn btn-sm btn-outline-danger d-none">Sair</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Partículas -->
+    <header class="text-center" id="home">
+
+        <div class="particulas" aria-hidden="true">
             <span class="particula"></span>
             <span class="particula"></span>
             <span class="particula"></span>
@@ -36,9 +58,7 @@
             <span class="particula"></span>
             <span class="particula"></span>
             <span class="particula"></span>
-            <span class="particula"></span>
-            <span class="particula"></span>
-            <span class="particula"></span>
+
         </div>
 
         <h1>Atherian Tasks</h1>
@@ -51,7 +71,7 @@
         <section id="forja-missoes" class="mb-5">
             <form id="forja" class="card p-4 shadow-sm border-0">
 
-                <h3 class="mb-4">Balcão da Guilda</h3>
+                <h2 class="mb-4 text-center">Balcão da Guilda</h2>
 
                 <div class="mb-3">
                     <label for="missao" class="form-label fw-bold">Missão:</label>
@@ -86,7 +106,7 @@
 
         <section id="mural-missoes">
 
-            <h3 class="mb-4 border-bottom pb-2">Mural de missões</h3>
+            <h2 class="mb-4 border-bottom pb-2 text-center">Mural de missões</h2>
             <div class="row" id="area-cards"></div>
         </section>
     </main>
@@ -99,8 +119,8 @@
         <p>© 2026 Atherian Tasks</p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <!--bootstrap JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script type="module" src="./scripts/script.js"></script>
 </body>
 
